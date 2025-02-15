@@ -17,12 +17,12 @@ class _ColorStepState extends State<ColorStep> {
 
   @override
   Widget build(BuildContext context) {
-    final colors = [
-      {'name': 'Blue', 'value': '#2196F3'},
-      {'name': 'Red', 'value': '#F44336'},
-      {'name': 'Green', 'value': '#4CAF50'},
-      {'name': 'Purple', 'value': '#9C27B0'},
-    ];
+    final colors = {
+      'Blue': '#2196F3',
+      'Red': '#F44336',
+      'Green': '#4CAF50',
+      'Purple': '#9C27B0',
+    };
 
     return FormField(
       validator: (value) {
@@ -39,10 +39,11 @@ class _ColorStepState extends State<ColorStep> {
             style: TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 16),
-          ...colors
-              .map((color) => RadioListTile(
-                    title: Text(color['name']!),
-                    value: color['value']!,
+          ...colors.entries
+              .map((entry) => RadioListTile(
+                    key: Key("radio_list_tile_${entry.key.toLowerCase()}"),
+                    title: Text(entry.value),
+                    value: entry.value,
                     groupValue: groupValue,
                     onChanged: (value) {
                       setState(() => groupValue = value.toString());

@@ -15,7 +15,7 @@ class BalanceStep extends StatelessWidget {
       decoration: const InputDecoration(
         labelText: 'Balance',
         hintText: 'Enter initial balance',
-        prefixText: '\$',
+        prefixText: '\$ ',
       ),
       keyboardType: TextInputType.number,
       inputFormatters: [

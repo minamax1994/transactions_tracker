@@ -1,4 +1,6 @@
-class CardEntity {
+import 'package:equatable/equatable.dart';
+
+class CardEntity extends Equatable {
   final String id;
   final String name;
   final String cardholder;
@@ -12,4 +14,7 @@ class CardEntity {
     required this.balance,
     required this.color,
   });
+
+  @override
+  List<Object?> get props => [id, name, cardholder, balance, color];
 }

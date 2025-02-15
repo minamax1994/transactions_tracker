@@ -28,6 +28,7 @@ dev_dependencies:
   hive_generator: ^2.0.1
   mockito: ^5.4.2
   json_serializable: ^6.7.1
+  bloc_test: ^10.0.0
 
 flutter:
   uses-material-design: true

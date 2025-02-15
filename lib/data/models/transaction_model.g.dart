@@ -53,7 +53,9 @@ class TransactionModelAdapter extends TypeAdapter<TransactionModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TransactionModelAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
+      other is TransactionModelAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
 }
 
 // **************************************************************************
@@ -63,7 +65,15 @@ class TransactionModelAdapter extends TypeAdapter<TransactionModel> {
 TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) {
   $checkKeys(
     json,
-    requiredKeys: const ['id', 'name', 'merchant', 'billingAmount', 'billingCurrency', 'image', 'date'],
+    requiredKeys: const [
+      'id',
+      'name',
+      'merchant',
+      'billingAmount',
+      'billingCurrency',
+      'image',
+      'date'
+    ],
   );
   return TransactionModel(
     id: json['id'] as String,
@@ -72,11 +82,12 @@ TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) {
     billingAmount: (json['billingAmount'] as num).toInt(),
     billingCurrency: json['billingCurrency'] as String,
     image: json['image'] as String,
-    date: TransactionModel._dateFromJson(json['date'] as int),
+    date: TransactionModel._dateFromJson((json['date'] as num).toInt()),
   );
 }
 
-Map<String, dynamic> _$TransactionModelToJson(TransactionModel instance) => <String, dynamic>{
+Map<String, dynamic> _$TransactionModelToJson(TransactionModel instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'merchant': instance.merchant,

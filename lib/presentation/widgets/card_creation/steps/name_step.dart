@@ -15,6 +15,7 @@ class NameStep extends StatelessWidget {
     return Column(
       children: [
         TextFormField(
+          key: const Key('card_name_text_field'),
           decoration: const InputDecoration(
             labelText: 'Card Name',
             hintText: 'Enter card name',
@@ -35,6 +36,7 @@ class NameStep extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         TextFormField(
+          key: const Key('cardholder_text_field'),
           decoration: const InputDecoration(
             labelText: 'Cardholder',
             hintText: 'Select cardholder',

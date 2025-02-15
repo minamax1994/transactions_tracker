@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 
 import '../../core/error/failures.dart';
 import '../entities/card.dart';
@@ -14,7 +15,7 @@ class CreateCard {
   }
 }
 
-class CardParams {
+class CardParams extends Equatable {
   final String name;
   final String cardholder;
   final int balance;
@@ -26,4 +27,7 @@ class CardParams {
     required this.balance,
     required this.color,
   });
+
+  @override
+  List<Object> get props => [name, cardholder, balance, color];
 }

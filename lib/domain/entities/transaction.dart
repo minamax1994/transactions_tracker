@@ -1,4 +1,6 @@
-class Transaction {
+import 'package:equatable/equatable.dart';
+
+class Transaction extends Equatable {
   final String id;
   final String name;
   final String merchant;
@@ -16,4 +18,7 @@ class Transaction {
     required this.image,
     required this.date,
   });
+
+  @override
+  List<Object?> get props => [id, name, merchant, billingAmount, billingCurrency, image, date];
 }
