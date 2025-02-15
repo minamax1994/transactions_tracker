@@ -1,2 +1,2 @@
 # transactions_tracker
-A Flutter app to track user payments and transactions
+A Flutter app to track user cards and transactions
