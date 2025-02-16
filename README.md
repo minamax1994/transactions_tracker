@@ -65,8 +65,7 @@ flutter test
 
 ### Development Environment
 
-1. Start MockAPI server or update endpoint in configuration
-2. Run the app in debug mode:
+Run the app in debug mode:
 ```bash
 flutter run
 ```
