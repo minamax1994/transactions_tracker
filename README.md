@@ -1,10 +1,7 @@
 # Transactions Tracker
 A Flutter mobile application for managing cards and transactions, built with clean architecture principles and modern Flutter development practices.
 
-![Screenshot_1739726753](https://github.com/user-attachments/assets/17bd500c-e71f-461e-ba33-a319ed1d6362)
-![Screenshot_1739726736](https://github.com/user-attachments/assets/4169e87e-bc68-495b-aa89-67ca7eee64c8)
-![Screenshot_1739726719](https://github.com/user-attachments/assets/919f4a81-ec12-4c4b-9cd6-8d291310c733)
-![Screenshot_1739726704](https://github.com/user-attachments/assets/d3288a10-e743-4513-a186-942b7d9d356c)
+![Screenshot-1](https://github.com/user-attachments/assets/7a8dfb5a-d658-4da3-9c10-52497a06de57)
 
 ## Architecture Overview
 
