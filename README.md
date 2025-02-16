@@ -14,7 +14,7 @@ The application follows Clean Architecture with three main layers:
    - Houses core business entities and validation rules
 
 2. **Data Layer**
-   - Implements repositories from domain layer
+   - Implements repositories from the domain layer
    - Handles data sources (local and remote)
    - Manages data caching and network states
    - Implements error handling and data transformations
@@ -125,3 +125,10 @@ lib/
    - Add background sync
    - Implement conflict resolution
 
+5. **UI Enhancements**
+   - Add app launcher icon and logo
+   - Add a bottom navigation bar to separate cards and transactions
+
+6. **Additional Features**
+   - Add login & registration
+   - Allow multiple accounts
