@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:transactions_tracker/presentation/widgets/card_creation/steps/balance_step.dart';
+import 'package:transactions_tracker/presentation/widgets/card_creation/balance_step.dart';
 
 void main() {
   testWidgets('BalanceStep validation works correctly', (WidgetTester tester) async {

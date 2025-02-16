@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Transactions Tracker'),
+        title: Text('Transactions Tracker', style: Theme.of(context).textTheme.headlineSmall),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Your Cards',
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
             const SizedBox(height: 16),
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Your Transactions',
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
             const SizedBox(height: 16),
@@ -88,7 +89,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => const CardCreationPage()),
+          CupertinoPageRoute(builder: (_) => const CardCreationPage()),
         ),
         child: const Icon(Icons.add),
         tooltip: 'Add New Card',

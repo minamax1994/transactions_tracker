@@ -4,6 +4,7 @@ import 'package:transactions_tracker/domain/entities/card.dart';
 
 import '../../bloc/cards/cards_cubit.dart';
 import '../../bloc/cards/cards_state.dart';
+import '../common/animated_card_item.dart';
 
 class CardsList extends StatelessWidget {
   final List<CardEntity> cards;
@@ -23,19 +24,7 @@ class CardsList extends StatelessWidget {
             itemCount: state.cards.length,
             itemBuilder: (context, index) {
               final card = state.cards[index];
-              return ListTile(
-                title: Text(card.name),
-                subtitle: Text('\$${card.balance}'),
-                leading: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Color(int.parse(card.color.replaceAll('#', '0xFF'))),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                trailing: Text(card.cardholder),
-              );
+              return AnimatedCardItem(card: card);
             },
           );
         }

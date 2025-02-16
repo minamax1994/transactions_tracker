@@ -38,7 +38,7 @@ The application follows Clean Architecture with three main layers:
 
 ### Prerequisites
 
-- Flutter SDK (latest stable version)
+- Flutter SDK (3.29.0)
 - Dart SDK (>=3.0.0)
 - Android Studio / VS Code with Flutter extensions
 
@@ -97,6 +97,7 @@ lib/
   │   │   ├── transaction/
   │   │   └── home/
   │   └── widgets/
+  │       ├── common/
   │       ├── card_creation/
   │       └── home/
   └── main.dart

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common/app_text_form_field.dart';
+
 class NameStep extends StatelessWidget {
   final Function(String) onNameChanged;
   final Function(String) onCardholderChanged;
@@ -14,12 +16,9 @@ class NameStep extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextFormField(
+        AppTextFormField(
           key: const Key('card_name_text_field'),
-          decoration: const InputDecoration(
-            labelText: 'Card Name',
-            hintText: 'Enter card name',
-          ),
+          hintText: 'Enter card name',
           validator: (value) {
             if (value == null || value.isEmpty) {
               return 'Please enter card name';
@@ -35,12 +34,9 @@ class NameStep extends StatelessWidget {
           onChanged: onNameChanged,
         ),
         const SizedBox(height: 16),
-        TextFormField(
+        AppTextFormField(
           key: const Key('cardholder_text_field'),
-          decoration: const InputDecoration(
-            labelText: 'Cardholder',
-            hintText: 'Select cardholder',
-          ),
+          hintText: 'Enter card holder',
           validator: (value) {
             if (value == null || value.isEmpty) {
               return 'Please enter cardholder name';

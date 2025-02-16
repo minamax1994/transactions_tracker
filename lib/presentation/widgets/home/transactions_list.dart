@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:transactions_tracker/presentation/widgets/common/transaction_item.dart';
 
 import '../../../domain/entities/transaction.dart';
 import '../../pages/transaction/transaction_details_page.dart';
@@ -12,19 +13,14 @@ class TransactionsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      physics: const AlwaysScrollableScrollPhysics(),
       itemCount: transactions.length,
       itemBuilder: (context, index) {
         final transaction = transactions[index];
-        return ListTile(
-          title: Text('\$${transaction.billingAmount.toStringAsFixed(2)} ${transaction.billingCurrency}'),
-          subtitle: Text(transaction.name),
-          trailing: Text(transaction.date.toString().substring(0, 10)),
+        return TransactionItem(
+          transaction: transaction,
           onTap: () => Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (_) => TransactionDetailsPage(transactionId: transaction.id),
-            ),
+            CupertinoPageRoute(builder: (_) => TransactionDetailsPage(transactionId: transaction.id)),
           ),
         );
       },

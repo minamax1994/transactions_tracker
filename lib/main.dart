@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,9 +29,16 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Transactions Tracker',
+        debugShowCheckedModeBanner: false,
+        scrollBehavior: CupertinoScrollBehavior(),
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
+          primarySwatch: Colors.deepPurple,
+          scaffoldBackgroundColor: Colors.grey[100],
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.grey[100],
+            centerTitle: true,
+            surfaceTintColor: Colors.transparent,
+          ),
         ),
         home: const HomePage(),
       ),

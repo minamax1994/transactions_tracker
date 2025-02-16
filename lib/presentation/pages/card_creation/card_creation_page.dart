@@ -4,9 +4,9 @@ import 'package:transactions_tracker/presentation/bloc/cards/cards_cubit.dart';
 
 import '../../bloc/card/card_cubit.dart';
 import '../../bloc/card/card_state.dart';
-import '../../widgets/card_creation/steps/balance_step.dart';
-import '../../widgets/card_creation/steps/color_step.dart';
-import '../../widgets/card_creation/steps/name_step.dart';
+import '../../widgets/card_creation/balance_step.dart';
+import '../../widgets/card_creation/color_step.dart';
+import '../../widgets/card_creation/name_step.dart';
 
 class CardCreationPage extends StatefulWidget {
   const CardCreationPage({Key? key}) : super(key: key);
@@ -54,11 +54,7 @@ class _CardCreationPageState extends State<CardCreationPage> {
               _submitForm();
             }
           },
-          onStepCancel: () {
-            if (_currentStep > 0) {
-              setState(() => _currentStep--);
-            }
-          },
+          onStepCancel: _currentStep > 0 ? () => setState(() => _currentStep--) : null,
           steps: [
             Step(
               title: const Text('Card Details'),

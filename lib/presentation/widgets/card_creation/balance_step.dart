@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../common/app_text_form_field.dart';
+
 class BalanceStep extends StatelessWidget {
   final Function(int) onBalanceChanged;
 
@@ -11,12 +13,9 @@ class BalanceStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: const InputDecoration(
-        labelText: 'Balance',
-        hintText: 'Enter initial balance',
-        prefixText: '\$ ',
-      ),
+    return AppTextFormField(
+      hintText: 'Enter initial balance',
+      prefixText: '\$ ',
       keyboardType: TextInputType.number,
       inputFormatters: [
         FilteringTextInputFormatter.digitsOnly,

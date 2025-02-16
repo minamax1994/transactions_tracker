@@ -62,7 +62,7 @@ class TransactionModel extends Transaction {
 
   Map<String, dynamic> toJson() => _$TransactionModelToJson(this);
 
-  static DateTime _dateFromJson(int millis) => DateTime.fromMillisecondsSinceEpoch(millis);
+  static DateTime _dateFromJson(int seconds) => DateTime.fromMillisecondsSinceEpoch(seconds * 1000);
 
-  static int _dateToJson(DateTime date) => date.millisecondsSinceEpoch;
+  static int _dateToJson(DateTime date) => date.millisecondsSinceEpoch ~/ 1000;
 }
